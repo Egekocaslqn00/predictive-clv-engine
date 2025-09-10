@@ -1,0 +1,1 @@
+# Project Roadmap\n\n## Phase 1: Core Implementation\n- [x] BG/NBD and Pareto/NBD models\n- [x] RFM Analysis\n- [x] K-Means Segmentation\n\n## Phase 2: Advanced Analytics\n- [ ] Deep Learning based CLV prediction\n- [ ] Real-time data processing pipeline\n- [ ] Automated reporting dashboard
