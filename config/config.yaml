@@ -1,0 +1,90 @@
+# E-Commerce CLV Prediction Project Configuration
+
+# Data Configuration
+data:
+  raw_path: "data/raw/"
+  processed_path: "data/processed/"
+  external_path: "data/external/"
+  
+  # Dataset information
+  dataset_name: "Online Store Customer Transactions (1M Rows)"
+  dataset_source: "Kaggle"
+  dataset_url: "https://www.kaggle.com/datasets/mountboy/online-store-customer-transactions-1m-rows"
+
+# Analysis Configuration
+analysis:
+  # RFM Analysis
+  rfm:
+    recency_days: 365  # Reference date for recency calculation
+    frequency_threshold: 1  # Minimum transactions for analysis
+    monetary_threshold: 0  # Minimum spending for analysis
+  
+  # Segmentation
+  segmentation:
+    algorithm: "kmeans"
+    n_clusters: 4  # Number of customer segments
+    random_state: 42
+    n_init: 10
+    max_iter: 300
+  
+  # CLV Modeling
+  clv:
+    model_type: "bgf"  # Options: bgf (BG/NBD), pareto (Pareto/NBD)
+    penalizer_coef: 0.0
+    max_iterations: 10000
+    verbose: True
+    
+    # Prediction parameters
+    prediction_period_days: 365  # Future period for CLV prediction
+    discount_rate: 0.01  # Annual discount rate for CLV calculation
+
+# Model Configuration
+model:
+  test_size: 0.2
+  random_state: 42
+  cv_folds: 5
+  
+  # Evaluation metrics
+  metrics:
+    - mae
+    - rmse
+    - mape
+    - r2
+
+# Visualization Configuration
+visualization:
+  style: "seaborn-v0_8-darkgrid"
+  figure_size: [12, 6]
+  dpi: 300
+  color_palette: "husl"
+  
+  # Output format
+  output_format: "png"
+  save_figures: True
+  figures_path: "reports/figures/"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  log_file: "logs/project.log"
+
+# Random seed for reproducibility
+random_seed: 42
+
+# Parallel processing
+n_jobs: -1  # Use all available cores
+
+# Project metadata
+project:
+  name: "E-Commerce Customer Lifetime Value Prediction"
+  version: "1.0.0"
+  author: "Data Scientist"
+  description: "Advanced CLV prediction using probabilistic models and customer segmentation"
+  keywords:
+    - "customer-lifetime-value"
+    - "rfm-analysis"
+    - "customer-segmentation"
+    - "bgf-model"
+    - "pareto-nbd"
+    - "e-commerce"
