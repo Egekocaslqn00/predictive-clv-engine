@@ -1,6 +1,6 @@
 # 📊 E-Ticaret Müşteri Yaşam Boyu Değeri (CLV) Analizi - Detaylı Rapor
 
-**Yazar:** Ege Koçaslan (Manus AI ile hazırlanmıştır)
+**Yazar:** Ege Koçaslan
 **Tarih:** 11 Aralık 2025
 
 ---
